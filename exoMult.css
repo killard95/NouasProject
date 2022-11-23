@@ -1,0 +1,77 @@
+
+body
+{
+	font-family: "Comic sans Ms";
+	font-size: small;
+	text-align: center;
+	background-image: url('multiplication.jpg');
+	background-attachment: fixed;
+	background-size: 100%;
+	margin: auto;
+}
+table
+{
+	border-collapse: collapse;
+	text-align: center;
+	border: medium solid black;
+	table-layout: auto;
+	width: 30%;
+	margin-bottom: 12px;
+	margin-top: 11.5px;
+}
+caption
+{
+	margin: auto;
+	font-size: medium;
+	font-weight: bold;
+	border: medium solid black;
+	border-collapse: collapse;
+}
+div
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: auto;
+}
+h3
+{
+	font-size: large;
+	margin: auto;
+}
+#button
+{
+	background-color: darkblue;
+	color: cyan;
+	margin-top: 15px;
+	border: medium solid darkblue;
+	box-shadow: 0.5em 0.5em 0.3em black;
+}
+h4
+{
+	text-align: center;
+	font-size: large;
+	color: cyan;
+	background-color: blue;
+	width: 100px;
+	margin: auto;
+}
+th
+{
+}
+
+td, tr, th
+{
+	border: 3px solid black;
+	padding: 5px 10px 5px 10px;
+	width: 25%;
+}
+
+tr:nth-child(even)
+{
+
+}
+tr:nth-child(odd)
+{
+}
