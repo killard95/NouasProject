@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="anagramme.css" />
+		<script type="text/javascript" src="anagramme.js"></script>
+	
+	    
+
+
+		<title>Anagramme</title>
+
+	</head>
+	<body>
+
+		<h3>Anagramme</h3>
+
+		<p>Votre but est de remettre les lettres dans le bon ordre afin
+		   d'obtenir un mot<br>
+		   cliquer sur le bouton pour obtenir les lettres dans le désordre.</p>
+
+			<input type=button id="button" onClick="anagramme()" value="obtenir mot" /><br><br> 
+			<table>
+				<tbody >
+					<tr id='smot'>
+					</tr>
+				</tbody>
+			</table><br><br>
+
+			<p>Vous avez 3 essais pour trouver la réponse.<br>
+			   Entrer ce que vous penser être le bon mot et valider votre réponse.</p><br>
+			<h3>1 ére tentative</h3>
+
+
+			<label>1 ére tentative</label> : <input type=text id="reponse" />
+			<input type=button id="button" onClick="check()" value="valider" /><br>
+			<br><div id="verif"></div>
+
+
+	</body>
+</html>

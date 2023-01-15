@@ -20,9 +20,9 @@ La derniere ligne apres les deux boucles permet de fermer chaque tables.
 		};
         
     if (n < 0) {
-        window.alert("La table de début doit etre positif")
+        window.alert("La table de début doit etre au moins égale à 0")
         } else if (m < n) {
-        window.alert("La table de fin doit etre supérieur à la table de début")
+        window.alert("La table de fin doit etre supérieur ou égale à la table de début")
         } else {
         document.getElementById('tbody').innerHTML = tableau;
     }
@@ -31,32 +31,17 @@ La derniere ligne apres les deux boucles permet de fermer chaque tables.
 
 function couleur_aleatoire() {
 
-    // var aaa = document.getElementsByTagName('table');
+    var tab = document.getElementsByTagName('table');
     var cap = document.getElementsByTagName('caption');
-    var xxx = document.getElementsByTagName('tr');
+    // var tr = document.getElementsByTagName('tr');
 
 
-
-        for (var s = 0; s < xxx.length; s ++) {
-           // aaa[s].style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")" ;
-            xxx[s].style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")" 
+        for (var s = 0; s < tab.length; s ++) {
+        // for (var s = 0; s < tr.length; s ++) {
+            tab[s].style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")" ;
+            // tr[s].style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")" 
         }
         for (var c = 0; c < cap.length; c ++) {
             cap[c].style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")" ;
         }
  };
-
-
-
-function pdf() {
-
-    var pdf = new jsPDF('p','pt','a4');
-    pdf.internal.scaleFactor = 2;
-
-    var options = {
-         pagesplit: true
-    };
-    pdf.addHTML(document.getElementById('tbody'), options, function () {
-    pdf.save('table.pdf');
-    });
-};
