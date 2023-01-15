@@ -1,0 +1,216 @@
+body{
+    margin-right: 1%;
+}
+table
+{
+    border-collapse: collapse;
+    border: medium solid black;
+    text-align: left;
+    width: 45%;
+}
+table
+{
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+td, tr, th
+{
+    border-left: 3px solid black;
+    padding: auto;
+}
+td
+{
+    height: 33px;
+}
+th
+{
+    background-color: grey;
+}
+tr:nth-child(even)
+{
+background-color: white;
+}
+tr:nth-child(odd)
+{
+background-color: silver;
+}
+#tableau
+{
+    width: 95%;
+}
+#home i
+{
+    float: none;
+}
+td i
+{
+    float: right;
+}
+section
+{
+    border: medium solid black;
+    width: 47%;
+    margin: 10px;
+}
+#section2
+{
+    border: none;
+}
+#section3
+{
+    padding-top: 10px;
+}
+#menu
+{
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    box-shadow: 5px 5px 5px 2px black;
+}
+#menu td
+{
+    background-color: white;
+}
+#menu a
+{
+    text-decoration: none;
+}
+#section1 a
+{
+    text-decoration: none;
+}
+#home
+{
+    background-color: black;
+}
+#compte
+{
+    text-decoration: none;
+}
+#deco
+{
+    float: right;
+}
+caption
+{
+    text-align: left;
+    font-weight: bold;
+    font-size: 22px;
+}
+#nombre
+{
+    text-align: center;
+    width: 25px;
+}
+#mini
+{
+    font-size: smaller;
+    text-align: right;
+}
+#head
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mess
+{
+    margin-left: 75%;
+}
+#container1, main
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+#car2
+{
+    border: medium solid black;
+    width: 70%;
+    text-align: left;
+}
+#car2 h2
+{
+    text-align: center;
+}
+#car2 p, #car2 a
+{
+    margin: 10px;
+}
+#car2 i{
+    color: black;
+}
+#container4 p, #container4 i
+{
+    margin: 10px;
+} 
+#section1 p,#section1 i, #section1 h3, strong
+{
+    margin: 10px;
+}
+#car1
+{
+    border: medium solid black;
+    width: 25%;
+    text-align: center;
+}
+#car1 h2
+{
+    margin: auto;
+}
+a:hover{
+    color: red;
+}
+a{
+    color:blue;
+}
+
+#n
+{
+    font-weight: normal;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+#mail
+{
+   display: block;
+   margin: 25%;
+}
+h2
+{
+    margin-left: 25px;
+}
+#titre
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#co
+{
+    font-weight: normal;
+}
+main
+{
+    width: 100%;
+}
+#alerte
+{
+    border: medium dashed black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+}
+#texteAlerte
+{
+    margin-left: 20px;
+}
+
+
+
+

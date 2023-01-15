@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<link id='lien' rel='stylesheet' href='test1.css' />
+		<script type='text/javascript' src='test1.js'></script>
+		<script src="https://kit.fontawesome.com/8fae4ee487.js" crossorigin="anonymous"></script>
+		<title>Test de positionnement</title>
+	</head>
+
+	<body onload="myFunction()">
+		<header>
+			<div id="head">
+				<a id="compte" href="#">MON COMPTE</a>
+				<a href="#" id="mess"><i class="fa-solid fa-envelope"></i> Messagerie (2)</a>
+				<input type="button" name='deco' id='deco' value="déconexion">
+			</div>
+			<p id="mini">Entreprise XXXXXX | N° Siret 2134677546U7654</p>
+		</header>
+	
+		<br>
+		<nav>
+			<table id="menu">
+				<tr>
+				<td id="home">
+					<a href="#">
+						<i class="fa-solid fa-house"></i>
+					</a>
+				</td>
+				<td>
+					<a href="#">MES INFOS</a>
+				</td>
+				<td>
+					<a href="#">MES AUTORISATIONS D'ACCES</a>
+				</td>
+				<td>
+					<a href="#">MES SALARIES</a>
+				</td>
+				<td>
+					<a href="#">MES COTISATIONS</a>
+				</td>
+				<td>
+					<a href="#">MES CONTRATS</a>
+				</td>
+				<td>
+					<a href="#">MES OPERATIONS</a>
+				</td>
+				</tr>
+			</table>
+		</nav>
+		<div id="titre">
+		<h2>Bienvenue EntrepriseXXXXXX</h2>
+		<h2 id="co"></h2>
+		</div>
+		<main>
+			<section>
+				<div id="section1">
+					<h3><i class="fa-solid fa-thumbtack"></i> Coordonnées</h3>
+					<p><strong id="n">n°</strong> <strong>SIRET</strong> : 2134677546U7654</p>
+					<br>
+					<p><i class="fa-solid fa-house"></i> <strong>Adresse</strong> : 298 Boulevard Voltaire 75002 PARIS</p>
+					<br>
+					<p><i class="fa-solid fa-phone"></i> <strong>Téléphone</strong> : 02 02 02 02 02</p>
+					<br>
+					<p><i class="fa-solid fa-envelope"></i> <strong>Adresse mail</strong> : <a href="mailto:entreprise.paris@gmail.com">entreprise.paris@gmail.com</a></p>
+				</div>
+			</section>
+			<section id="section2">
+					<div id="alerte">
+						<div id="urgent">
+							<i class="fa-solid fa-triangle-exclamation fa-3x"></i>
+							<p>Urgent</p>
+						</div>
+						<div id="texteAlerte"></div>
+							<p>Il ne vous reste que 3 jours pour remplir la déclaration nominative annuelle des salaires (DNAS). Pour faire votre déclaration,
+							<a href="#">cliquez ici</a></p>
+						</div>
+					</div>
+					<div id="container1">
+						<div id="car1">
+						<h2>Messagerie</h2>
+						<i id="mail" class="fa-solid fa-envelope fa-4x"></i>
+						<a href="#">Vous avez 2 messages non-lus</a>
+					</div>
+					<div id="car2">
+						<h2>Contact PRO BTP</h2>
+						<p><i class="fa-solid fa-user"></i>  Votre conseiller : JEAN DUPONT</p>
+						<br>
+						<p><i class="fa-solid fa-phone"></i>  04 04 04 04 04</p>
+						<br>
+						<a href="mailto:conseiller@outlook.fr"><i class="fa-solid fa-envelope"></i> Envoyer un e-mail à mon conseiller
+						</a>
+					</div>
+					</div>
+			</section>
+			<section id="section3">
+					<table id="tableau">
+						<caption><i class="fa-solid fa-flag"></i> Dernieres opérations</caption>
+						<thead>
+						<tr>
+							<th>
+								Date
+							</th>
+							<th>
+								Objet
+							</th>
+							<th id="nombre">
+								Numéro d'opération
+							</th>
+							<th>
+								Auteur
+							</th>
+							<th>
+								Etat
+							</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									08/03/2014
+								</td>
+								<td>
+									Mises à jour
+								</td>
+								<td id="nombre">
+									17
+								</td>
+								<td>
+									Profil 2
+								</td>
+								<td>
+									Brouillon <i class="fa-solid fa-gear"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									28/02/2014
+								</td>
+								<td>
+									Affiliation
+								</td>
+								<td id="nombre">
+									16
+								</td>
+								<td>
+									Profil 1
+								</td>
+								<td>
+									Brouillon <i class="fa-solid fa-gear"></i>
+								</td>
+								</tr>
+							<tr>
+								<td>
+									27/02/2014	
+								</td>
+								<td>
+									Mises à jour
+								</td>
+								<td id="nombre">
+									15
+								</td>
+								<td>
+									ADMIN
+								</td>
+								<td>
+									Validé <i class="fa-solid fa-check"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									25/02/2014
+								</td>
+								<td>
+									Mises à jour
+								</td>
+								<td id="nombre">
+									14
+								</td>
+								<td>
+									Profil 1
+								</td>
+								<td>
+									Validé <i class="fa-solid fa-check"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									10/02/2014
+								</td>
+								<td>
+									DNAS
+								</td>
+								<td id="nombre">
+									13
+								</td>
+								<td>
+									ADMIN
+								</td>
+								<td>
+									Validé <i class="fa-solid fa-check"></i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									23/01/2014
+								</td>
+								<td>
+									Arrêt de travail
+								</td>
+								<td id="nombre">
+									12
+								</td>
+								<td>
+									Profil 1
+								</td>
+								<td>
+									Validé <i class="fa-solid fa-check"></i>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+			</section>
+			<section>
+				<div id="container4">
+					<h2><i class="fa-solid fa-bolt-lightning"></i> Important</h2>
+					<p><i class="fa-solid fa-play"></i> <strong>Nouveau :</strong>paiement des cotisations </p>
+					<p><i class="fa-solid fa-play"></i> <strong>Arrêt de travail > 90 jours :</strong><a href="#">ce qui change au 1er janvier 2014</a></p>
+					<p><i class="fa-solid fa-play"></i> <strong>Exonérations sociales et fiscales :</strong><a href="#">conformité des contrats prévoyance / frais de santé</a></p>
+					<p><i class="fa-solid fa-play"></i> <a href="#"><strong>Inscrivez-vous</strong></a>au télépaiement</li>
+				</div>
+			</section>
+		</main>
+
+
+
+		
+
+	</body>
+</html>
