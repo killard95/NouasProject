@@ -1,0 +1,120 @@
+#displayNav{
+    float: left;
+    background-color: deepskyblue;
+    color: blue;
+    border-radius: 20px;
+    width: 8vw;
+    height: 5vh;
+    animation: menu 3s linear;
+}
+@keyframes menu {
+    0% {width: 0; height: 0;position: relative; left: -20vw;}
+    50% {width: 4vw; height: 2.5vh;position: relative; left: 95%;}
+    100% {width: 8vw; height: 5vh; position: relative; left: 0%; transform: rotateZ(360deg)rotateY(360deg);}
+}
+#nav{
+    float: left;
+    display: none;
+    padding-left: 5vw;
+    margin-left: 15px;
+    width: 90%;
+}
+#nav button{
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    width: 10vw;
+    height: 5vh;
+    font-size: 0.9em;
+    margin: auto;
+    animation: btn 2s linear;
+}
+@keyframes btn {
+    0% {width: 0; height: 0; font-size: 0; color: black; margin: 0;}
+    50% {width: 7vw; height: 3vh; font-size: 0.5em; color: gray; margin: 0 7%;}
+    100% {width: 10vw; height: 5vh; font-size: 0.9em; color: white; margin : auto;}
+}
+#nav button.active{
+    color: lime;
+    background-color: darkgreen;
+}
+#nav button:hover{
+    color: cyan;
+    background-color: darkblue;
+}
+#separator{
+    clear: both;
+}
+#secModule1, #secModule2, #secModule3, #secModule4, #secModule5{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    animation: move 2s linear;
+}
+@keyframes move {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+h3{
+    text-align: center;
+    width: 100%;
+}
+#tableModule1, table[id=tableModule1] td, table[id=tableModule1] th{
+    border: 2px solid black;
+    border-collapse: collapse;
+    height: 25px;
+}
+table[id=tableModule1] td:hover{
+    background-color: grey;
+    color: blue;
+}
+#imageModule1{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+img{
+    margin-top: 5vh;
+    height: 50vh;
+    width: 50vw;
+    animation: appear 2s linear;
+}
+@keyframes appear {
+    from {width: 0; height: 0;}
+    to {width: 50vw; height: 50vh;}
+}
+input{
+    width: 10vw;
+    margin: 2vh auto;
+}
+#cibleModule2 table{
+    width:80%;
+    margin: auto;
+}
+#cibleModule2 table, #cibleModule2 thead, #cibleModule2 tbody, #cibleModule2 td, #cibleModule2 th{
+    border: solid black 2px;
+    border-collapse: collapse;
+    text-align: center;
+}
+#cibleModule2 td{
+    width: 50%;
+}
+section[id=secModule4] ul{
+    padding: 0%;
+    list-style-type: none;
+    text-align: center;
+}
+#containButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    margin: auto;
+}
+#li1{
+    font-weight: bold;
+    color: red;
+}
