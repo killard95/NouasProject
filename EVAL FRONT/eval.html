@@ -12,11 +12,11 @@
         <nav>
             <input type="button" id="displayNav" value="menu">
             <div id="nav">
-                <button class="btn" id="thModule1">Module 1</button>
-                <button class="btn" id="thModule2">Module 2</button>
-                <button class="btn" id="thModule3">Module 3</button>
-                <button class="btn" id="thModule4">Module 4</button>
-                <button class="btn" id="thModule5">Module 5</button>
+                <button class="btn" id="Module1">Module 1</button>
+                <button class="btn" id="Module2">Module 2</button>
+                <button class="btn" id="Module3">Module 3</button>
+                <button class="btn" id="Module4">Module 4</button>
+                <button class="btn" id="Module5">Module 5</button>
             </div>
         </nav>
     </header>
@@ -50,7 +50,7 @@
         <input id="nom" type="text" placeholder="Nom :"> 
         <input id="prenom" type="text" placeholder="Prénom :"> 
         <input id="buttonModule2" type="button" value="Add in table">
-       <div id="cibleModule2"></div>
+        <div id="cibleModule2"></div>
        
     </section>
     <section id="secModule3">
@@ -87,284 +87,32 @@
         <h3>Module 5</h3> 
             
         <form id="checkboxModule5" method="get" action="">
-        <p>
-            Veuillez choisir une ou plusieurs options<br>
-            <input type="checkbox" name="opt" id="option1" value="option1"><label for="option1">Option 1</label><br>
-            <input type="checkbox" name="opt" id="option2" value="option2"><label for="option2">Option 2</label><br>
-            <input type="checkbox" name="opt" id="option3" value="option3"><label for="option3">Option 3</label><br>
-            <input type="checkbox" name="opt" id="option4" value="option4"><label for="option4">Option 4</label><br>
-        </p>
-    </form>
+            <p>
+                Veuillez choisir une ou plusieurs options<br>
+                <input type="checkbox" name="opt" id="option1" value="option1"><label for="option1">Option 1</label><br>
+                <input type="checkbox" name="opt" id="option2" value="option2"><label for="option2">Option 2</label><br>
+                <input type="checkbox" name="opt" id="option3" value="option3"><label for="option3">Option 3</label><br>
+                <input type="checkbox" name="opt" id="option4" value="option4"><label for="option4">Option 4</label><br>
+            </p>
+        </form>
 
-    <form id="radioModule5" method="get" action="">
-        <p>Veuillez choisir le type DIV ou OPT <br>
-            <input type="radio" name="choix" value="div" id="div"><label for="div">Div</label>
-            <input type="radio" name="choix" value="opt" id="opt"><label for="opt">Opt</label>
-        </p>
-    </form>
+        <form id="radioModule5" method="get" action="">
+            <p>Veuillez choisir le type DIV ou OPT <br>
+                <input type="radio" name="choix" value="div" id="div"><label for="div">Div</label>
+                <input type="radio" name="choix" value="opt" id="opt"><label for="opt">Opt</label>
+            </p>
+        </form>
 
-    <div id="cibleModule5"></div>
+        <div id="cibleModule5"></div>
     </section>
 
-    <script>
-        // Affichage du menu
-
-        let displayNav = document.getElementById("displayNav");
-        let nav = document.getElementById("nav");
-
-        displayNav.addEventListener("click",()=> {
-            if (nav.style.display==="flex" ){
-                nav.style.display = "none"
-            } else {
-                nav.style.display="flex";
-            }
-        })
-
-        var btn = nav.getElementsByClassName("btn");
-        for (let i = 0; i<btn.length; i++){
-            btn[i].addEventListener("click", function() {
-                let actif = document.getElementsByClassName("active");
-                if (actif.length>0){
-                actif[0].className = actif[0].className.replace(" active", "");
-                }
-                this.className += " active";
-            });
-        }
-        // Affichage de chacun des modules
-
-        let module1 = document.getElementById("thModule1");
-        let module2 = document.getElementById("thModule2");
-        let module3 = document.getElementById("thModule3");
-        let module4 = document.getElementById("thModule4");
-        let module5 = document.getElementById("thModule5");
-        let section1 = document.getElementById("secModule1");
-        let section2 = document.getElementById("secModule2");
-        let section3 = document.getElementById("secModule3");
-        let section4 = document.getElementById("secModule4");
-        let section5 = document.getElementById("secModule5");
-
-        module1.addEventListener("click",()=> {
-            if (section1.style.display==="flex"){
-                section1.style.display="none";
-            } else {
-                section1.style.display="flex";
-                section2.style.display="none";
-                section3.style.display="none";
-                section4.style.display="none";
-                section5.style.display="none";
-            }
-        })
-        module2.addEventListener("click",()=> {
-            if (section2.style.display==="flex"){
-                section2.style.display="none";
-            } else {
-                section2.style.display="flex";
-                section1.style.display="none";
-                section3.style.display="none";
-                section4.style.display="none";
-                section5.style.display="none";
-            }
-        })
-        module3.addEventListener("click",()=> {
-            if (section3.style.display==="flex"){
-                section3.style.display="none";
-            } else {
-                section3.style.display="flex";
-                section1.style.display="none";
-                section2.style.display="none";
-                section4.style.display="none";
-                section5.style.display="none";
-            }
-        })
-        module4.addEventListener("click",()=> {
-            if (section4.style.display==="flex"){
-                section4.style.display="none";
-            } else {
-                section4.style.display="flex";
-                section1.style.display="none";
-                section2.style.display="none";
-                section3.style.display="none";
-                section5.style.display="none";
-            }
-        })
-        module5.addEventListener("click",()=> {
-            if (section5.style.display==="flex"){
-                section5.style.display="none";
-            } else {
-                section5.style.display="flex";
-                section1.style.display="none";
-                section2.style.display="none";
-                section3.style.display="none";
-                section4.style.display="none";
-            }
-        })
-
-        // Module 1
-
-        let cible = document.getElementById("imgModule1");
-        let cell = document.getElementsByClassName("cell");
-        let arrImage = ["https://images6.alphacoders.com/749/749966.png",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGJQnAxu_8UfTsWOEsyGCFC3EeDIaa_v75NA&usqp=CAU",
-                        "https://jolly-roger.fr/wp-content/uploads/2022/08/affiche-wanted-one-piece-luffy.jpg",
-                        "https://m.media-amazon.com/images/I/91EUW0K1AWL._AC_SL1500_.jpg",
-                        "https://i.skyrock.net/3989/41953989/pics/1676397652.jpg",
-                        "https://newsgeek.com.br/wp-content/uploads/2023/01/Luffy-Gear-5.jpg"  
-                        ]
-
-        tableModule1.addEventListener("mouseout", ()=>{
-            cible.innerHTML = "";
-        })
-        for (let i = 0 ; i < arrImage.length; i++){
-        cell[i].addEventListener("mouseover", ()=>{
-            cible.innerHTML = `<img src=${arrImage[i]}>`
-        })
-    }
-
-
-        // Module 2
- 
-        let buttonModule2 = document.getElementById("buttonModule2");
-        let cibleModule2 = document.getElementById("cibleModule2");
-        let table = document.createElement("TABLE");
-        let thead = document.createElement("THEAD");
-        let th1 = document.createElement("TH");
-        let th2 = document.createElement("TH");
-        let tbody = document.createElement("TBODY");
-
-
-        buttonModule2.addEventListener("click", ()=>{
-            let nom = document.getElementById("nom").value;
-            let prenom = document.getElementById("prenom").value;
-            let ligne = document.createElement("TR");
-            let cell1 = ligne.insertCell(0);
-            let cell2 = ligne.insertCell(1);
-            cibleModule2.appendChild(table)
-            table.appendChild(thead);
-            thead.appendChild(th1)
-            thead.appendChild(th2)
-            table.appendChild(tbody)
-            tbody.appendChild(ligne)
-            th1.innerHTML = "NOM"
-            th2.innerHTML = "PRENOM"
-            cell1.innerHTML = nom;        
-            cell2.innerHTML = prenom;
-        })
-
-        // Module 3
-        
-        let container = document.getElementById
-        let lorem = document.getElementById("lorem");
-        style.addEventListener("change", ()=>{
-            let style = document.getElementById("style").value;
-            if ( style === "rouge"){
-                lorem.style.color = "red";
-                lorem.style.backgroundColor = "grey";
-                lorem.style.textAlign = "left";
-            } else if ( style === "vert"){
-                lorem.style.color = "lime";
-                lorem.style.backgroundColor = "blue";
-                lorem.style.textAlign = "right";
-            } else if (style === "aleatoire"){
-                lorem.style.color = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
-                lorem.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";;
-                lorem.style.textAlign = "justify";
-            } else {
-                lorem.style.color = "black";
-                lorem.style.backgroundColor = "white";
-                lorem.style.textAlign = "unset";
-            }
-        })
-
-        // Module4
-
-        let ul = document.getElementById("ulModule4");
-        let arrLi = ul.getElementsByTagName("li");
-        let up = document.getElementById("up")
-        let down = document.getElementById("down")
-        let li1 = arrLi[0]
-        let li2 = arrLi[1]
-        let li3 = arrLi[2]
-        let li4 = arrLi[3]
-   
-        
-        up.addEventListener("click", ()=>{ 
-            if (li1 == arrLi[1] ) {
-                li2.insertAdjacentElement('beforebegin', li1);
-            }else if (li1 == arrLi[2]){
-                li3.insertAdjacentElement('beforebegin', li1);
-            }else if (li1 == arrLi[3]){
-                li4.insertAdjacentElement('beforebegin', li1);
-            } else if (li1 == arrLi[0]){
-                li4.insertAdjacentElement('afterend', li1);
-            }
-        })
-
-        down.addEventListener("click", ()=>{
-            if (li1 == arrLi[0] ) {
-                li2.insertAdjacentElement('afterend', li1);
-            }else if (li1 == arrLi[1]){
-                li3.insertAdjacentElement('afterend', li1);
-            }else if (li1 == arrLi[2]){
-                li4.insertAdjacentElement('afterend', li1);
-            } else if (li1 == arrLi[3]){
-                li2.insertAdjacentElement('beforebegin', li1);
-            }
-        })
-
-        // Module 5
-        let myDiv = document.getElementById("cibleModule5");
-        let nbrCheck = "";
-        let check = document.getElementById("checkboxModule5");
-        let menu = document.createElement("select")
-        let newDiv = document.createElement("div");
-        
-        
-        let radio = document.getElementById("radioModule5");
-        check.addEventListener("change", ()=>{
-            for (let i=0;i<check.length;i++){
-                if (check[i].checked === true && ! nbrCheck.includes(check[i].value)){
-                    nbrCheck += `${check[i].value} `
-                } else if (check[i].checked === false){
-                    nbrCheck = nbrCheck.replace(check[i].value,"")
-                }
-                radio.addEventListener("change", ()=>{
-                    if (radio[0].checked === true){
-                        if (myDiv.hasChildNodes()){
-                            myDiv.removeChild(myDiv.children[0])
-                        }
-                        myDiv.appendChild(newDiv);
-                        newDiv.innerHTML = nbrCheck
-                    } else if (radio[1].checked === true){
-                        if (myDiv.hasChildNodes()){
-                            myDiv.removeChild(myDiv.children[0])
-                        }
-                        console.log(nbrCheck)
-                        myDiv.appendChild(menu);
-                            let option = document.createElement("option");
-                            menu.appendChild(option);
-                            option.innerHTML = nbrCheck;
-                            
-                            
-                        }   
-                    })
-                }
-        });
-        
-
-
-        
-        // check.addEventListener("change", ()=>{
-        //     for (let i=0;i<4;i++){
-        //         if (check[i].checked === true && ! nbrCheck.includes(check[i].value)){
-        //              nbrCheck += `${check[i].value} `
-        //             } else if (check[i].checked === false){
-        //                 nbrCheck = nbrCheck.replace(check[i].value,"")
-        //     }
-        // }
-        //     myDiv.innerHTML = nbrCheck
-        // });
-
-            
-    </script>
+    <script type="text/javascript" src="affichageMenu.js"></script>
+    <script type="text/javascript" src="affichageModule.js"></script>
+    <script type="text/javascript" src="module1.js"></script>
+    <script type="text/javascript" src="module2.js"></script>
+    <script type="text/javascript" src="module3.js"></script>
+    <script type="text/javascript" src="module4.js"></script>
+    <script type="text/javascript" src="module5.js"></script>
+          
 </body>
 </html>
