@@ -1,0 +1,20 @@
+{
+        "data": [
+        { "id": 1, "name": "croquettes de poisson chat", "price": "12€" },
+        { "id": 2, "name": "fillets de pimp", "price": "8€" },
+        { "id": 3, "name": "soufflé braisé", "price": "3€"},
+        { "id": 4, "name": "salade décomposé", "price": "17€"},
+        { "id": 5, "name": "agneau déconfiné", "price": "23€"},
+        { "id": 6, "name": "entrecote dégraissée", "price": "27€"},
+        { "id": 7, "name": "pelardon désseché", "price": "5€"},
+        { "id": 8, "name": "copeaux de safran vanillés", "price": "9€"},
+        { "id": 9, "name": "café mouillette", "price": "1€"},
+        { "id": 10, "name": "tiramisu", "price": "50€"},
+        { "id": 11, "name": "tarte au pomme", "price": "5€"},
+        { "id": 12, "name": "coca cola aux glacons", "price": "3€"},
+        { "id": 13, "name": "smoothie champignons/radis", "price": "8€"},
+        { "id": 14, "name": "heineken", "price": "5€"},
+        { "id": 15, "name": "cote du rhone", "price": "15€"}
+        
+    ]
+}
