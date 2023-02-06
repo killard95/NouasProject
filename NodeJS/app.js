@@ -3,14 +3,14 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
-// Route à suivre pour l'envoie des requete et la réception des reponses
+// Route à suivre pour l'envoie des requetes et la réception des reponses
 app.get('/', (requete, response) =>{
     response.send("salut ca fart !");
 })
 
 // Route à suivre pour la récupération des données (data)
 app.get('/data', (request, response) =>{
-    // on utilise fs pour lire les données
+    // on utilise fs.readFile pour lire les données
     fs.readFile('data.json', (err, data) =>{
         // Ajout d'une condition au cas ou il y ai une erreur
         if (err) {
