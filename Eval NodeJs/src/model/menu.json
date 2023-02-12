@@ -1,0 +1,35 @@
+{
+  "entrees": [
+    { "id": 1, "name": "croquettes_de_poisson_chat", "price": "12€" },
+    { "id": 2, "name": "fillets_de_pimp", "price": "8€" },
+    { "id": 3, "name": "soufflé_braisé", "price": "3€" },
+    { "id": 4, "name": "salade_décomposé", "price": "17€" }
+  ],
+  "plats": [
+    { "id": 1, "name": "agneau_déconfiné", "price": "23€" },
+    { "id": 2, "name": "entrecote_dégraissée", "price": "27€" },
+    { "id": 3, "name": "pelardon_désseché", "price": "5€" },
+    { "id": 4, "name": "copeaux_de_safran_vanillés", "price": "9€" }
+  ],
+  "desserts": [
+    { "id": 1, "name": "café_mouillette", "price": "1€" },
+    { "id": 2, "name": "tiramisu", "price": "50€" },
+    { "id": 3, "name": "tarte_au_pomme", "price": "5€" }
+  ],
+  "boissons": [
+    { "id": 1, "name": "coca_cola_aux_glacons", "price": "3€" },
+    { "id": 2, "name": "smoothie_champignons/radis", "price": "8€" },
+    { "id": 3, "name": "heineken", "price": "5€" },
+    { "id": 4, "name": "cote_du_rhone", "price": "15€" }
+  ],
+  "fromages": [
+    { "id": 1, "name": "munster", "price": "4€" },
+    { "id": 2, "name": "brie", "price": "3€" },
+    { "id": 3, "name": "roquefort", "price": "5€" }
+  ],
+  "fruits": [
+    { "id": 1, "name": "peche", "price": "2€" },
+    { "id": 2, "name": "banane", "price": "1€" },
+    { "id": 3, "name": "pomelo", "price": "3€" }
+  ]
+}
