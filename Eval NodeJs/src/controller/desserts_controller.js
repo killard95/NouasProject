@@ -1,9 +1,11 @@
 const fs = require('fs');
+// On enregistre la route pour accéder au menu dans cette constante
+const pathToData = './src/model/menu.json';
 
 // Méthode pour récupérer tous les élement desserts du menu
 exports.getAllDataTab = (request, response) =>{
     // On utilise readfile pour lire le menu
-    fs.readFile('./src/model/menu.json', (err, data)=>{
+    fs.readFile(pathToData, (err, data)=>{
         // Si il y a une erreur de lecture
         if (err) {
             // Le code 500 signifie qu'il y a une erreur et on affiche sous la forme d'un json le message suivant
@@ -22,7 +24,7 @@ exports.getAllDataTab = (request, response) =>{
 // Méthode pour récupérer un dessert par son id
 exports.getDataById = (request, response) =>{
     // On utilise readfile pour lire le menu
-    fs.readFile('./src/model/menu.json', (err, data) =>{
+    fs.readFile(pathToData, (err, data) =>{
         // S'il y a une erreur on affiche le message suivant
         if (err) {
             response.status(500).json({
@@ -54,7 +56,7 @@ exports.getDataById = (request, response) =>{
 // Méthode pour récupérer un dessert par son name
 exports.getDataByName = (request, response) =>{
     // On utilise readfile pour lire le menu
-    fs.readFile('./src/model/menu.json', (err, data) =>{
+    fs.readFile(pathToData, (err, data) =>{
         // S'il y a une erreur lors de la lecture on affiche un message d'erreur
         if (err) {
             response.status(500).json({
@@ -86,7 +88,7 @@ exports.getDataByName = (request, response) =>{
 // Methode pour créer un nouveau dessert dans le menu
 exports.createData = (request, response) =>{
     // On utilise readfile pour lire le menu
-    fs.readFile('./src/model/menu.json', (err, data) =>{
+    fs.readFile(pathToData, (err, data) =>{
         // S'il y a une erreur lors de la lecture on affiche un message d'erreur
         if (err) {
             response.status(500).json({
@@ -97,10 +99,12 @@ exports.createData = (request, response) =>{
         } else {
             // On enregistre les desserts dans cette constante
             const existingData = JSON.parse(data);
+             // On enregistre le dernier élément pour récupérer son id
+             const lastData = existingData.desserts[existingData.length-1];
             // On ajoute le nouveau dessert en incrémentant l'id selon le nombre de desserts déjà présent
-            existingData.desserts.push({ "id": existingData.desserts.length+1, "name": request.body.name, "price": request.body.price });
+            existingData.desserts.push({ "id": lastData.id + 1, "name": request.body.name, "price": request.body.price });
             // On utilise writefile pour écrire dans le menu
-            fs.writeFile('./src/model/menu.json', JSON.stringify(existingData), (writeErr) =>{
+            fs.writeFile(pathToData, JSON.stringify(existingData), (writeErr) =>{
                 // S'il y a une erreur lors de l'écriture on affiche le message d'erreur
                 if (writeErr) {
                     response.status(500).json({
@@ -122,7 +126,7 @@ exports.createData = (request, response) =>{
 // Méthode pour modifier un dessert déjà présent dans le menu
 exports.updateData = (request, response) =>{
     // On utilise readfile pour lire le menu
-    fs.readFile('./src/model/menu.json', (err, data) =>{
+    fs.readFile(pathToData, (err, data) =>{
         // S'il y a une erreur lors de l'écriture on affiche le message suivant
         if (err) {
             response.status(500).json({
@@ -146,7 +150,7 @@ exports.updateData = (request, response) =>{
                 // On enregistre ce que l'on veux modifié (ici il s'agit du name)
                 dataById.name = request.body.name;
                 // On utilise writefile pour écrire dans le menu
-                fs.writeFile('./src/model/menu.json', JSON.stringify(existingData), (writeErr) =>{
+                fs.writeFile(pathToData, JSON.stringify(existingData), (writeErr) =>{
                     // S'il y a une erreur lors de l'écriture on affiche le message suivant
                     if (writeErr) {
                         response.status(500).json({
@@ -169,7 +173,7 @@ exports.updateData = (request, response) =>{
 // Méthode pour effacer un dessert du menu
 exports.deleteDataById = (request, response) =>{
     // On utilise readfile pour lire le menu
-    fs.readFile('./src/model/menu.json', (err, data) =>{
+    fs.readFile(pathToData, (err, data) =>{
         // S'il y a une erreur lors de la lecture du menu on affiche un message d'erreur
         if (err) {
             response.status(500).json({
@@ -194,7 +198,7 @@ exports.deleteDataById = (request, response) =>{
                 // On filtre les desserts afin de ne garder que celle qui correspond à l'id dans la requete
                 existingData.desserts = existingData.desserts.filter((obj) => obj.id != parseInt(request.params.id));
                 // On utilise writefile pour écrire dans le menu
-                fs.writeFile('./src/model/menu.json', JSON.stringify(existingData), (writeErr) =>{
+                fs.writeFile(pathToData, JSON.stringify(existingData), (writeErr) =>{
                     // S'il y a une erreur lors de l'écriture on affiche un message d'erreur
                     if (writeErr) {
                         response.status(500).json({

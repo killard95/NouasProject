@@ -1,9 +1,11 @@
 const fs = require("fs");
+// On enregistre la route pour accéder au menu dans cette constante
+const pathToData = './src/model/menu.json';
 
 // Méthode pour récupérer toutes les entrées du menu
 exports.getAllDataTab = (request, response) => {
   // On utilise readfile pour lire le menu
-  fs.readFile("./src/model/menu.json", (err, data) => {
+  fs.readFile(pathToData, (err, data) => {
     // S'il y a une erreur on affiche le message suivant
     if (err) {
       response.status(500).json({
@@ -22,7 +24,7 @@ exports.getAllDataTab = (request, response) => {
 // Méthode pour récupérer une entrée par son id
 exports.getDataById = (request, response) => {
   // On utilise readfile pour lire le menu
-  fs.readFile("./src/model/menu.json", (err, data) => {
+  fs.readFile(pathToData, (err, data) => {
     // S'il y a une erreur lors de la lecture on affiche le message suivant
     if (err) {
       response.status(500).json({
@@ -56,7 +58,7 @@ exports.getDataById = (request, response) => {
 // Méthode pour récupérer une entrée par son name
 exports.getDataByName = (request, response) => {
   // On utilise readfile pour lire le menu
-  fs.readFile("./src/model/menu.json", (err, data) => {
+  fs.readFile(pathToData, (err, data) => {
     // S'il y a une erreur lors de la lecture on affiche le message suivant
     if (err) {
       response.status(500).json({
@@ -89,7 +91,7 @@ exports.getDataByName = (request, response) => {
 // Méthode pour créer une nouvelle entrée dans le menu
 exports.createData = (request, response) => {
   // On utilise readfile pour lire le menu
-  fs.readFile("./src/model/menu.json", (err, data) => {
+  fs.readFile(pathToData, (err, data) => {
     // S'il y a une erreur lors de la lecture on affiche un message d'erreur
     if (err) {
       response.status(500).json({
@@ -100,10 +102,12 @@ exports.createData = (request, response) => {
     } else {
       // On enregistre dans cette constante toutes les entrées du menu
       const existingData = JSON.parse(data);
+       // On enregistre le dernier élément pour récupérer son id
+       const lastData = existingData.entrees[existingData.length-1];
       // On ajoute une nouvelle boisson en incrémettant son id selon le nombre d'entrées déjà présente
-      existingData.entrees.push({ "id": existingData.entrees.length + 1, "name": request.body.name, "price": request.body.price });
+      existingData.entrees.push({ "id": lastData.id + 1, "name": request.body.name, "price": request.body.price });
       // On utilise writefile pour écrire dans le menu
-      fs.writeFile("./src/model/menu.json", JSON.stringify(existingData), (writeErr) => {
+      fs.writeFile(pathToData, JSON.stringify(existingData), (writeErr) => {
           // S'il y a une erreur lors de l'écriture
           if (writeErr) {
             // On affiche un message d'erreur
@@ -128,7 +132,7 @@ exports.createData = (request, response) => {
 // Méthode pour modifier une entrée déjà présente dans le menu
 exports.updateData = (request, response) => {
   // On utilise readfile pour lire le menu
-  fs.readFile("./src/model/menu.json", (err, data) => {
+  fs.readFile(pathToData, (err, data) => {
     // S'il y a une erreur lors de la lecture on affiche le message suivant
     if (err) {
       response.status(500).json({
@@ -153,7 +157,7 @@ exports.updateData = (request, response) => {
         // On enregistre ce que l'on veut modifier (ici il s'agit du name)
         dataById.name = request.body.name;
         // On utilise writefile pour écrire dans le menu
-        fs.writeFile("./src/model/menu.json", JSON.stringify(existingData), (writeErr) => {
+        fs.writeFile(pathToData, JSON.stringify(existingData), (writeErr) => {
             // S'il y a une erreur lors de l'écriture on affiche un message d'erreur
             if (writeErr) {
               response.status(500).json({
@@ -179,7 +183,7 @@ exports.updateData = (request, response) => {
 // Méthode pour effacer une entrée du menu
 exports.deleteDataById = (request, response) => {
   // On utilise readfile pour lire le menu
-  fs.readFile("./src/model/menu.json", (err, data) => {
+  fs.readFile(pathToData, (err, data) => {
     // S'il y a une erreur lors de la lecture on affiche un message d'erreur
     if (err) {
       response.status(500).json({
@@ -204,7 +208,7 @@ exports.deleteDataById = (request, response) => {
         // On filtre les entrées pour ne garder que celle qui correspond à l'id de la requete
         existingData.entrees = existingData.entrees.filter((obj) => obj.id != parseInt(request.params.id));
         // On utilise writefile pour écrire dans le menu
-        fs.writeFile("./src/model/menu.json", JSON.stringify(existingData), (writeErr) => {
+        fs.writeFile(pathToData, JSON.stringify(existingData), (writeErr) => {
             // S'il y a une erreur lors de l'écriture on affiche un message d'erreur
             if (writeErr) {
               response.status(500).json({
